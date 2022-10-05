@@ -1,0 +1,52 @@
+﻿@page
+@model WebApplication1.Pages.PizzaModel
+@{
+  
+}
+
+
+
+<div class="text-center">
+    <div>
+        <h2>Welcome to order page!</h2>
+        <p class="smallText"><i>one pizza per order</i></p>
+    </div>
+    <div class="container">
+        <div class="row w-100 py-5" style="background-color:lightslategrey;">
+            <div class="col-4">
+                <img src="~/images/Pizzas/Create.png" class="w-100"/>
+            </div>
+            <div class="col-8 align-items-center align-middle" style="margin-top:100px; text-align:left">
+                
+                <h4>Customize your oown recipte!</h4>
+                <p style="color:black">It's pretty easy with pur PizzaMaker!</p>
+                <a class="btn btn-primary" asp-area="" asp-page="/Forms/MakeOwnPizza">Make your own pizza</a>
+            </div>
+        </div>
+        
+        @foreach(var item in @Model.pizzasModels)
+        {
+            <div class="w-100 mt-5 mb-5 row py-5" style="background-color:#67605a;">
+                <div class="col-4">
+                    
+                
+                    @{
+                        var imgsource = $"~/images/Pizzas/{item.ImgSource}.png";
+                    }
+                    <img src=@imgsource asp-append-version="true" class="w-100" />
+                </div>
+                <div class="col-8"> 
+                    <h2>@item.Name</h2>
+                    <h2> for @item.FinalPrice $</h2>         
+                    <a class="btn btn-primary" asp-page="Checkout/Checkout"
+                    asp-route-ImageTitle="@item.ImgSource"
+                    
+                    asp-route-Name="@item.Name"
+                    asp-route-Id="@item.Id"
+                    asp-route-PizzaPrice="@item.FinalPrice">Order</a>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>

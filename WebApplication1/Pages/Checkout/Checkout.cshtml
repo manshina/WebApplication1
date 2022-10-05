@@ -1,0 +1,18 @@
+﻿@page
+@model WebApplication1.Pages.Checkout.CheckoutModel
+@{
+    var imagePath = $"~/images/Pizzas/{@Model.ImageTitle}.png";
+}
+
+<div class="col-4 mx-auto mt-5 text-center">
+    
+    <h2>Your @Model.Name </h2>
+    <h2>For @Model.PizzaPrice</h2>
+    <img src=@imagePath class="w-100" asp-append-version="true" />
+    <img src="" class="w-100"/>
+    <h2>Is it's OK?'</h2>
+
+    <a class="btn btn-primary" asp-area="" asp-page="ThanksPage">Confirm</a>
+</div>
+
+

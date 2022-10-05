@@ -1,0 +1,37 @@
+﻿@page
+@model WebApplication1.Pages.Forms.MakeOwnPizzaModel
+@{
+}
+<a class="nav-link text-dark" asp-area="" asp-page="/Pizza">Pizzas</a>
+
+
+<div class="container">
+    <form class="border border-dark p-4 col-4 mx-auto" method="post">
+      <div class="form-group">
+        <label asp-for="Pizza.Name">Name your pizza @Model.Pizza.Name</label>
+        <input asp-for="Pizza.Name" type="text" class="form-control" >
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Pizza.Tomato"/>
+        <label class="form-check-label" for="exampleCheck1">Tomatto</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Pizza.Cheese"/>
+        <label class="form-check-label" for="exampleCheck1">Chesse</label>
+     </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Pizza.Pepper"/>
+        <label class="form-check-label" for="exampleCheck1">Pepper</label>
+     </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Pizza.Mushroom"/>
+        <label class="form-check-label" for="exampleCheck1">Mushroom</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" asp-for="Pizza.Salat"/>
+        <label class="form-check-label" for="exampleCheck1">Salat</label>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
